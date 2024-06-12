@@ -6,6 +6,7 @@ driver.Navigate().GoToUrl("https://letsusedata.com/index.html");
             driver.FindElement(By.Id("txtPassword")).Clear();
             driver.FindElement(By.Id("txtPassword")).SendKeys("Test12456");
             driver.FindElement(By.Id("javascriptLogin")).Click();
+            //checks if the "curent url is equal to the expected url"
             string url = driver.getCurentURL(); 
             Assert.AreEqual("https://letsusedata.com/CourseSelection.html", url);
             driver.Navigate().GoToUrl("https://letsusedata.com/CourseSelection.html");
@@ -14,5 +15,6 @@ driver.Navigate().GoToUrl("https://letsusedata.com/index.html");
             driver.FindElement(By.Id("txtPassword")).Clear();
             driver.FindElement(By.Id("txtPassword")).SendKeys("test1234");
             driver.FindElement(By.Id("javascriptLogin")).Click();
+            //checks if the curent url is equal to the expected url, should give false.
             url = driver.getCurentURL(); 
             Assert.AreEqual("https://letsusedata.com/CourseSelection.html", url);
